@@ -23,7 +23,7 @@ public class ProductOrderDAO {
     @Autowired
     private QueueService queueService;
 
-    private final String SQL="insert into order(productid,factoryid,selected_quantity,CreatedDate,status) values(:pid,:fid,:selected_quantity,:createdDate,'INPROCESS')";
+    private final String SQL="insert into [order](productid,factoryid,selected_quantity,CreatedDate,status) values (:pid,:fid,:selected_quantity,:createdDate,'INPROCESS')";
 
     public String insertOrder(ProductOrderDTO pdto){
 
