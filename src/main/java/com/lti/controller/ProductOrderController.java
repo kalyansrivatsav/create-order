@@ -18,4 +18,9 @@ public class ProductOrderController {
         return productOrderDAO.insertOrder(productOrderDTO);
     }
 
+    @GetMapping("/status/{orderId}")
+    public String fetchOrderStatus(@PathVariable int orderId){
+        return productOrderDAO.fetchStatus(orderId);
+    }
+
 }

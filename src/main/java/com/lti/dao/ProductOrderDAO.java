@@ -23,9 +23,9 @@ public class ProductOrderDAO {
     @Autowired
     private QueueService queueService;
 
-    private final String SQL="insert into [order](productid,factoryid,selected_quantity,CreatedDate,status) values (:pid,:fid,:selected_quantity,:createdDate,'INPROCESS')";
-
     public String insertOrder(ProductOrderDTO pdto){
+
+        String SQL="insert into [order](productid,factoryid,selected_quantity,CreatedDate,status) values (:pid,:fid,:selected_quantity,:createdDate,'INPROCESS')";
 
         Date current_date = new Date();
 
@@ -44,5 +44,18 @@ public class ProductOrderDAO {
         queueService.insertMessage(String.valueOf(keyHolder.getKey()));
 
         return String.valueOf(keyHolder.getKey());
+    }
+
+    public String fetchStatus(int orderId){
+        String[] status = new String[1];
+
+        Map<String,Integer> sqlparams = new HashMap<>();
+        sqlparams.put("orderId",orderId);
+
+        String SQL="select status from [order] where id=:orderId";
+        namedParameterJdbcTemplate.query(SQL,sqlparams,rs -> {
+            status[0] = rs.getString("status");
+        });
+        return status[0];
     }
 }
