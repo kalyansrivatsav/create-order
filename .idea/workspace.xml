@@ -6,10 +6,6 @@
   <component name="ChangeListManager">
     <list default="true" id="065bc529-a2a8-4e79-b2cc-a634bab19fb8" name="Changes" comment="added storage connection string">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/lti/controller/ProductOrderController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/lti/controller/ProductOrderController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/lti/dao/ProductOrderDAO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/lti/dao/ProductOrderDAO.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/application.properties" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />

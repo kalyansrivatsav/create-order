@@ -2,6 +2,7 @@ package com.lti.service;
 
 import com.azure.storage.queue.QueueClient;
 import com.azure.storage.queue.QueueClientBuilder;
+import com.azure.storage.queue.QueueMessageEncoding;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Service;
 
@@ -19,6 +20,7 @@ public class QueueService {
         QueueClient queueClient=new QueueClientBuilder()
                 .connectionString(storageconnectionstring)
                 .queueName(queuename)
+                .messageEncoding(QueueMessageEncoding.BASE64)
                 .buildClient();
 
         queueClient.sendMessage(orderId);
