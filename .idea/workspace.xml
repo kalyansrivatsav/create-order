@@ -4,8 +4,10 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="065bc529-a2a8-4e79-b2cc-a634bab19fb8" name="Changes" comment="added storage connection string">
+    <list default="true" id="065bc529-a2a8-4e79-b2cc-a634bab19fb8" name="Changes" comment="Added queue message encoding">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/lti/controller/ProductOrderController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/lti/controller/ProductOrderController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/lti/dao/ProductOrderDAO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/lti/dao/ProductOrderDAO.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -189,10 +191,19 @@
       <option name="presentableId" value="Default" />
       <updated>1677658780738</updated>
     </task>
+    <task id="LOCAL-00001" summary="Added queue message encoding">
+      <created>1678537914916</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1678537914916</updated>
+    </task>
+    <option name="localTasksCounter" value="2" />
     <servers />
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="added storage connection string" />
-    <option name="LAST_COMMIT_MESSAGE" value="added storage connection string" />
+    <MESSAGE value="Added queue message encoding" />
+    <option name="LAST_COMMIT_MESSAGE" value="Added queue message encoding" />
   </component>
 </project>

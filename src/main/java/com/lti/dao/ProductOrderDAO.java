@@ -1,6 +1,7 @@
 package com.lti.dao;
 
 import com.lti.dto.ProductOrderDTO;
+import com.lti.dto.status;
 import com.lti.service.QueueService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.jdbc.core.namedparam.MapSqlParameterSource;
@@ -25,7 +26,7 @@ public class ProductOrderDAO {
 
     public String insertOrder(ProductOrderDTO pdto){
 
-        String SQL="insert into [order](productid,factoryid,selected_quantity,CreatedDate,status) values (:pid,:fid,:selected_quantity,:createdDate,'INPROCESS')";
+        String SQL="insert into [order](productid,factoryid,selected_quantity,CreatedDate,status) values (:pid,:fid,:selected_quantity,:createdDate,:status)";
 
         Date current_date = new Date();
 
@@ -34,6 +35,7 @@ public class ProductOrderDAO {
         sqlparms.put("fid",pdto.getFactId());
         sqlparms.put("selected_quantity",pdto.getSelectedQuantity());
         sqlparms.put("createdDate",current_date);
+        sqlparms.put("status", status.INPROCESS.getValue());
 
         KeyHolder keyHolder=new GeneratedKeyHolder();
 
@@ -46,15 +48,15 @@ public class ProductOrderDAO {
         return String.valueOf(keyHolder.getKey());
     }
 
-    public String fetchStatus(int orderId){
-        String[] status = new String[1];
+    public int fetchStatus(int orderId){
+        int[] status = new int[1];
 
         Map<String,Integer> sqlparams = new HashMap<>();
         sqlparams.put("orderId",orderId);
 
         String SQL="select status from [order] where id=:orderId";
         namedParameterJdbcTemplate.query(SQL,sqlparams,rs -> {
-            status[0] = rs.getString("status");
+            status[0] = rs.getInt("status");
         });
         return status[0];
     }

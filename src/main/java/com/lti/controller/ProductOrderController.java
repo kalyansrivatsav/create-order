@@ -19,7 +19,7 @@ public class ProductOrderController {
     }
 
     @GetMapping("/status/{orderId}")
-    public String fetchOrderStatus(@PathVariable int orderId){
+    public int fetchOrderStatus(@PathVariable int orderId){
         return productOrderDAO.fetchStatus(orderId);
     }
 
